@@ -1,5 +1,9 @@
-function add(num1: number, num2: number) {
-  return num1 + num2;
+function add(input1: number | string, input2: number | string) {
+  if (typeof input1 === "number" && typeof input2 === "number") {
+    return input1 + input2;
+  } else {
+    return input1.toString() + input2.toString;
+  }
 }
 
 console.log(add(2, 3));
@@ -40,7 +44,7 @@ const person: PersonType = {
   age: 32,
   // TUPLES
   role: [1, "Admin"],
-  roleEnum: Role.ADMIN // 0
+  roleEnum: Role.ADMIN, // 0
 };
 
 const mary = new Person("Mary", 30);
