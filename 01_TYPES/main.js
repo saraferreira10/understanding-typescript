@@ -10,9 +10,12 @@ var Person = /** @class */ (function () {
     return Person;
 }());
 var person = {
-    name: 'Mary',
+    name: "Mary",
     age: 32,
+    // TUPLES
+    role: [1, "Admin"],
 };
-var mary = new Person('Mary', 30);
+var mary = new Person("Mary", 30);
 console.log(mary instanceof Person);
 console.log(typeof person);
+console.log(person.role[0]);
