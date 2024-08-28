@@ -14,12 +14,25 @@ class Person {
   }
 }
 
+enum Role {
+  ADMIN,
+  READ_ONLY,
+  AUTHOR,
+}
+
+// enum Role {
+//   ADMIN = 'ADMIN',
+//   READ_ONLY = 5,
+//   AUTHOR = 6,
+// }
+
 type PersonType = {
   name: string;
   age: number;
 
   // TUPLE TYPE
   role: [number, string];
+  roleEnum: Role;
 };
 
 const person: PersonType = {
@@ -27,6 +40,7 @@ const person: PersonType = {
   age: 32,
   // TUPLES
   role: [1, "Admin"],
+  roleEnum: Role.ADMIN // 0
 };
 
 const mary = new Person("Mary", 30);
@@ -35,10 +49,10 @@ console.log(mary instanceof Person);
 console.log(typeof person);
 
 // TUPLES
-console.log(person.role[0])
+console.log(person.role[0]);
 
 // I cannot assign a numeric value to the second property
 // person.role[1] = 1
 
 // This is acceptable
-person.role = [2, 'User']
+person.role = [2, "User"];
