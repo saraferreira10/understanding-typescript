@@ -36,3 +36,7 @@ console.log(person.role[0]);
 // person.role[1] = 1
 // This is acceptable
 person.role = [2, "User"];
+// let functionType: Function;
+var functionType;
+functionType = add;
+console.log(functionType(2, 3));

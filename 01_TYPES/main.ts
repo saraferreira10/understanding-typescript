@@ -60,3 +60,8 @@ console.log(person.role[0]);
 
 // This is acceptable
 person.role = [2, "User"];
+
+// let functionType: Function;
+let functionType: (a: number | string, b: number | string) => number | string;
+functionType = add;
+console.log(functionType(2, 3));
