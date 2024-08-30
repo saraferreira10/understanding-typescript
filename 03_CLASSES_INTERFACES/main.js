@@ -1,16 +1,31 @@
 var Department = /** @class */ (function () {
     function Department(name) {
+        this.employees = [];
         this.name = name;
     }
+    Department.prototype.getEmployees = function () {
+        return this.employees.slice();
+    };
     Department.prototype.describe = function () {
         console.log("Department: ", this.name);
+    };
+    Department.prototype.addEmployee = function (employee) {
+        this.employees.push(employee);
+    };
+    Department.prototype.printEmployee = function () {
+        console.log(this.employees);
     };
     return Department;
 }());
 var d = new Department("Design");
 d.describe();
-var departmentCopy = { name: 'DUMMY', describe: d.describe };
-departmentCopy.describe();
+d.addEmployee('Anna');
+var e = d.getEmployees();
+e.push('TEST');
+console.log(e);
+d.printEmployee();
+// const departmentCopy = { name: "DUMMY", describe: d.describe };
+// departmentCopy.describe();
 // const testThisCopy = {
 //   name: "Test",
 //   describe: d.describe,

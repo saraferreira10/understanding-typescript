@@ -1,21 +1,44 @@
 class Department {
   name: string;
+  private employees: string[] = [];
 
   constructor(name: string) {
     this.name = name;
   }
 
+  getEmployees() {
+    return this.employees.slice();
+  }
+
   describe(this: Department) {
     console.log("Department: ", this.name);
+  }
+
+  addEmployee(employee: string) {
+    this.employees.push(employee);
+  }
+
+  printEmployee() {
+    console.log(this.employees);
   }
 }
 
 const d = new Department("Design");
 d.describe();
 
-const departmentCopy = {name: 'DUMMY', describe: d.describe};
+d.addEmployee('Anna')
 
-departmentCopy.describe()
+let e = d.getEmployees()
+e.push('TEST')
+
+console.log(e)
+d.printEmployee()
+
+
+
+// const departmentCopy = { name: "DUMMY", describe: d.describe };
+
+// departmentCopy.describe();
 
 // const testThisCopy = {
 //   name: "Test",
