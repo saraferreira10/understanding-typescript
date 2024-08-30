@@ -1,8 +1,7 @@
 class Department {
-  name: string;
   private employees: string[] = [];
 
-  constructor(name: string) {
+  constructor(public readonly name: string) {
     this.name = name;
   }
 
@@ -33,6 +32,9 @@ e.push('TEST')
 
 console.log(e)
 d.printEmployee()
+
+// this does not work because name is a readonly property
+// d.name = 'new name'
 
 
 

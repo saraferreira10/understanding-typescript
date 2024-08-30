@@ -1,5 +1,6 @@
 var Department = /** @class */ (function () {
     function Department(name) {
+        this.name = name;
         this.employees = [];
         this.name = name;
     }
@@ -24,6 +25,8 @@ var e = d.getEmployees();
 e.push('TEST');
 console.log(e);
 d.printEmployee();
+// this does not work because name is a readonly property
+// d.name = 'new name'
 // const departmentCopy = { name: "DUMMY", describe: d.describe };
 // departmentCopy.describe();
 // const testThisCopy = {
