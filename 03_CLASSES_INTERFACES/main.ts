@@ -1,12 +1,17 @@
 class Department {
   private employees: string[] = [];
 
-  constructor(public readonly name: string) {
+  constructor(public readonly id: string, public name: string) {
+    this.id = id;
     this.name = name;
   }
 
-  getEmployees() {
+  get getEmployees() {
     return this.employees.slice();
+  }
+
+  set setEmployees(value: string[]) {
+    this.employees = value;
   }
 
   describe(this: Department) {
@@ -22,21 +27,33 @@ class Department {
   }
 }
 
-const d = new Department("Design");
+class ItDepartment extends Department {
+  constructor(id: string, public admins: string[]) {
+    super(id, 'IT');
+    this.admins = admins
+  }
+
+  describe(this: Department) {
+    console.log("IT Department: ", this);
+  }
+}
+
+const d = new ItDepartment("01", ['Joe', 'Mark']);
+
+d.setEmployees = ['Jack', 'Mary']
+d.addEmployee('Anna')
+d.addEmployee('Max')
+console.log('Employees', d.getEmployees)
 d.describe();
 
-d.addEmployee('Anna')
 
-let e = d.getEmployees()
-e.push('TEST')
+// let e = d.getEmployees()
+// e.push('TEST')
 
-console.log(e)
-d.printEmployee()
+// console.log(e)
 
 // this does not work because name is a readonly property
 // d.name = 'new name'
-
-
 
 // const departmentCopy = { name: "DUMMY", describe: d.describe };
 
