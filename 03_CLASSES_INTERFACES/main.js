@@ -20,6 +20,7 @@ var Department = /** @class */ (function () {
         this.employees = [];
         this.id = id;
         this.name = name;
+        Department.departments.push(this);
     }
     Object.defineProperty(Department.prototype, "getEmployees", {
         get: function () {
@@ -44,6 +45,10 @@ var Department = /** @class */ (function () {
     Department.prototype.printEmployee = function () {
         console.log(this.employees);
     };
+    Department.printDepartments = function () {
+        console.log('Departments', Department.departments);
+    };
+    Department.departments = [];
     return Department;
 }());
 var ItDepartment = /** @class */ (function (_super) {
@@ -65,6 +70,10 @@ d.addEmployee('Anna');
 d.addEmployee('Max');
 console.log('Employees', d.getEmployees);
 d.describe();
+var d2 = new Department('02', 'Design');
+var d3 = new Department('03', 'Finances');
+var d4 = new Department('04', 'HR');
+Department.printDepartments();
 // let e = d.getEmployees()
 // e.push('TEST')
 // console.log(e)

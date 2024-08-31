@@ -1,9 +1,11 @@
 class Department {
   private employees: string[] = [];
+  private static departments: Department[] = [];
 
   constructor(public readonly id: string, public name: string) {
     this.id = id;
     this.name = name;
+    Department.departments.push(this)
   }
 
   get getEmployees() {
@@ -25,6 +27,10 @@ class Department {
   printEmployee() {
     console.log(this.employees);
   }
+
+  static printDepartments() {
+    console.log('Departments', Department.departments)
+  }
 }
 
 class ItDepartment extends Department {
@@ -45,6 +51,11 @@ d.addEmployee('Anna')
 d.addEmployee('Max')
 console.log('Employees', d.getEmployees)
 d.describe();
+
+const d2  = new Department('02', 'Design')
+const d3  = new Department('03', 'Finances')
+const d4  = new Department('04', 'HR')
+Department.printDepartments()
 
 
 // let e = d.getEmployees()
