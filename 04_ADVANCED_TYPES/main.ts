@@ -52,5 +52,14 @@ interface Horse extends Animal {
 }
 
 const b1: Bird = {
+    type: 'bird',
     flyingSpeed: 1000
+}
+
+interface ErrorContainer {
+  [prop: string]: string;
+}
+
+const errorBag: ErrorContainer = {
+  email: "Not a valid email"
 }

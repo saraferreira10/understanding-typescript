@@ -22,5 +22,9 @@ printEmployee(e1);
 console.log("Type:", typeof new Car()); // object
 console.log(new Car() instanceof Car && "Car"); // Car
 var b1 = {
+    type: 'bird',
     flyingSpeed: 1000
+};
+var errorBag = {
+    email: "Not a valid email"
 };
