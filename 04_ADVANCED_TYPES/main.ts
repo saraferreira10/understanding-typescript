@@ -34,3 +34,23 @@ printEmployee(e1);
 
 console.log("Type:", typeof new Car()); // object
 console.log(new Car() instanceof Car && "Car"); // Car
+
+type Species = "bird" | "horse"; // ...
+
+interface Animal {
+  type: Species;
+}
+
+interface Bird extends Animal {
+  type: "bird";
+  flyingSpeed: number;
+}
+
+interface Horse extends Animal {
+  type: "horse";
+  flyingSpeed: number;
+}
+
+const b1: Bird = {
+    flyingSpeed: 1000
+}

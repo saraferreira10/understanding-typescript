@@ -21,3 +21,6 @@ var Car = /** @class */ (function () {
 printEmployee(e1);
 console.log("Type:", typeof new Car()); // object
 console.log(new Car() instanceof Car && "Car"); // Car
+var b1 = {
+    flyingSpeed: 1000
+};
