@@ -74,3 +74,7 @@ function merge(a, b) {
 }
 const mergedObject = merge({ name: "Mary" }, { age: 23 });
 console.log(mergedObject.name, "-", mergedObject.age);
+// function printPerson<T extends Person> (a: T){
+//     console.log(a.getName)
+// }
+// printPerson(new Student("Lucy", 13))
