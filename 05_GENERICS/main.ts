@@ -123,3 +123,18 @@ function extractAndConvert<T extends object, U extends keyof T>(
 }
 
 console.log(extractAndConvert({ name: "Max" }, "name"));
+
+class DataStorage<T> {
+  private data: Array<T> = [];
+
+  addItem(item: T) {
+    this.data.push(item);
+  }
+
+  getItems() {
+    return this.data.slice(0);
+  }
+}
+
+const textStorage = new DataStorage<string>();
+textStorage.addItem("Susana");

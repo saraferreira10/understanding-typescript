@@ -98,3 +98,16 @@ function extractAndConvert(obj, key) {
     return obj[key];
 }
 console.log(extractAndConvert({ name: "Max" }, "name"));
+class DataStorage {
+    constructor() {
+        this.data = [];
+    }
+    addItem(item) {
+        this.data.push(item);
+    }
+    getItems() {
+        return this.data.slice(0);
+    }
+}
+const textStorage = new DataStorage();
+textStorage.addItem("Susana");
