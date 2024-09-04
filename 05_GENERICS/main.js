@@ -78,3 +78,23 @@ console.log(mergedObject.name, "-", mergedObject.age);
 //     console.log(a.getName)
 // }
 // printPerson(new Student("Lucy", 13))
+function printArr(a) {
+    for (const [index, value] of a.entries()) {
+        console.log(index, "-", value);
+    }
+}
+const people = [
+    { name: "Alice", age: 30 },
+    { name: "Bob", age: 25 },
+    { name: "Charlie", age: 35 },
+];
+printArr(people);
+function returnLength(element) {
+    return element.length;
+}
+console.log(returnLength("string"));
+console.log(returnLength(["string"]));
+function extractAndConvert(obj, key) {
+    return obj[key];
+}
+console.log(extractAndConvert({ name: "Max" }, "name"));

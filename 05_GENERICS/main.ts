@@ -90,3 +90,36 @@ console.log(mergedObject.name, "-", mergedObject.age);
 // }
 
 // printPerson(new Student("Lucy", 13))
+
+function printArr<T extends object>(a: Array<T>) {
+  for (const [index, value] of a.entries()) {
+    console.log(index, "-", value);
+  }
+}
+const people = [
+  { name: "Alice", age: 30 },
+  { name: "Bob", age: 25 },
+  { name: "Charlie", age: 35 },
+];
+
+printArr(people);
+
+interface Lengthy {
+  length: number;
+}
+
+function returnLength<T extends Lengthy>(element: T) {
+  return element.length;
+}
+
+console.log(returnLength("string"));
+console.log(returnLength(["string"]));
+
+function extractAndConvert<T extends object, U extends keyof T>(
+  obj: T,
+  key: U
+) {
+  return obj[key];
+}
+
+console.log(extractAndConvert({ name: "Max" }, "name"));
