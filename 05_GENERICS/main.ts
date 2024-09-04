@@ -64,9 +64,6 @@ promise
   })
   .catch((error) => {
     console.error(error);
-  })
-  .finally(() => {
-    console.log("Operação completa!");
   });
 
 // type ToDo = {
@@ -79,3 +76,11 @@ promise
 // fetch("https://jsonplaceholder.typicode.com/todos")
 //   .then((response) => response.json())
 //   .then((data: ToDo[]) => console.log(data.slice(0, 5)));
+
+function merge<T, U>(a: T, b: U): T & U {
+  return Object.assign({}, a, b);
+}
+
+const mergedObject = merge({ name: "Mary" }, { age: 23 });
+
+console.log(mergedObject.name, "-", mergedObject.age);
