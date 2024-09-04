@@ -111,3 +111,11 @@ class DataStorage {
 }
 const textStorage = new DataStorage();
 textStorage.addItem("Susana");
+function createCourseGoal(title, description) {
+    let courseGoal = {};
+    courseGoal.title = title;
+    courseGoal.description = description;
+    return courseGoal;
+}
+const names = ["Max", "Mary"];
+// names.push("Mia") // don't work

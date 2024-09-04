@@ -138,3 +138,18 @@ class DataStorage<T> {
 
 const textStorage = new DataStorage<string>();
 textStorage.addItem("Susana");
+
+interface CourseGoal {
+  title: string;
+  description: string;
+}
+
+function createCourseGoal(title: string, description: string): CourseGoal {
+  let courseGoal: Partial<CourseGoal> = {};
+  courseGoal.title = title;
+  courseGoal.description = description;
+  return courseGoal as CourseGoal;
+}
+
+const names: Readonly<string[]> = ["Max", "Mary"];
+// names.push("Mia") // don't work
